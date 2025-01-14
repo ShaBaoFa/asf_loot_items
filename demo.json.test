@@ -1,0 +1,9 @@
+// 实际使用请改为 json后缀
+// items
+// 2923300 2 banana
+// 730 2 csgo
+{
+  "ipc":"http://127.0.0.1:8000",
+  "password":"password",
+  "items":"2923300 2"
+}
