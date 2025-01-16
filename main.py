@@ -53,7 +53,7 @@ async def main(bots=None):
                 
                 while retry_count < 5 and not success:
                     try:
-                        result = await command(asf, '!loot^ ' + bot_name + config_data['items'])
+                        result = await command(asf, '!loot^ ' + bot_name +' ' +config_data['items'])
                         current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
                         
                         if result.success and 'failed' not in result.result:
