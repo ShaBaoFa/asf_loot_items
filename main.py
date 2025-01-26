@@ -1,4 +1,5 @@
 import json
+import os
 from typing import List, Any
 
 from ASF import IPC
@@ -37,8 +38,9 @@ async def handle_retry(asf, bot_name, retry_count, current_time, error_message):
 
 async def main(bots=None):
     config = input('请输入 config 名称:')
-    config_data = read_config(config + '.json')
-    
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    config_path = os.path.join(current_dir, config)
+    config_data = read_config(config_path + '.json')
     while True:
         async with IPC(ipc=config_data['ipc'], password=config_data['password'], timeout=60) as asf:
             if not bots:
